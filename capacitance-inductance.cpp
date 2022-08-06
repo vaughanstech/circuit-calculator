@@ -55,9 +55,42 @@ void rc_constant()
     std::cout << "It will take " << time_const * 5 << " seconds for the capacitor to be fully charged\n";
 }
 
+void inductance()
+{
+    int mode, totalInduct;
+    double htotal;
+    auto i = 1;
+    auto j = 1;
+    std::cout << "1. Series\n2. Parallel\n: ";
+    std::cin >> mode;
+    std::cout << "How many inductors are you computing?: ";
+    std::cin >> totalInduct;
+    float hArray[totalInduct];
+    if (mode == 1)
+    {
+        for (i; i <= totalInduct; i++)
+        {
+            std::cout << "Enter the value of the inductor: ";
+            std::cin >> hArray[i];
+            htotal += hArray[i];
+        }
+        std::cout << "Total inductance: " << htotal << "H\n";
+    }
+    else if (mode == 2)
+    {
+        for (i; i <= totalInduct; i++)
+        {
+            std::cout << "Enter the value of the inductor: ";
+            std::cin >> hArray[i];
+            htotal += (1 / hArray[i]);
+        }
+        std::cout << "Total inductor: " << 1 / htotal << "H\n";
+    }
+}
+
 int main()
 {
-    rc_constant();
+    inductance();
 
     return 0;
 }
