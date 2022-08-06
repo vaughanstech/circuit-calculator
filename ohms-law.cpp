@@ -82,12 +82,42 @@ void power_loss()
     }
 }
 
+void resistance()
+{
+    int mode, totalResist;
+    float Rtotal;
+    auto i = 1;
+    auto j = 1;
+    std::cout << "How many resistors are you computing?: ";
+    std::cin >> totalResist;
+    float rArray[totalResist];
+    if (totalResist == 2)
+    {
+        for (i; i <= totalResist; i++)
+        {
+            std::cout << "Enter the value of the resistor: ";
+            std::cin >> rArray[i];
+        }
+        std::cout << "Total resistance: " << (rArray[1] * rArray[2]) / (rArray[1] + rArray[2]) << " Ohms\n";
+    }
+    else
+    {
+        for (i; i <= totalResist; i++)
+        {
+            std::cout << "Enter the value of the resistor: ";
+            std::cin >> rArray[i];
+            Rtotal += (1 / rArray[i]);
+        }
+        std::cout << "Total resistance: " << 1 / Rtotal << " Ohms\n";
+    }
+}
+
 int main()
 {
     int mode;
     char ans;
     std::cout << "Hello, Welcome to the Circuit Calculator\n";
-    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n4. Quit\n: ";
+    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n4. Find Total Resistance\n5. Quit\n: ";
     std::cin >> mode;
     if (mode == 1)
     {
@@ -114,6 +144,18 @@ int main()
             return 0;
     }
     else if (mode == 4)
+    {
+        resistance();
+        std::cout << "Compute again? (y/n): ";
+        std::cin >> ans;
+        if (ans == 'y')
+        {
+            main();
+        }
+        else
+            return 0;
+    }
+    else if (mode == 5)
     {
         std::cout << "Goodbye!\n";
         return 0;
