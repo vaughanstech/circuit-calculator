@@ -84,7 +84,23 @@ void power_loss()
 
 int main()
 {
-    power_loss();
+    int mode;
+    std::cout << "Hello, Welcome to the Circuit Calculator\n";
+    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n: ";
+    std::cin >> mode;
+    if (mode == 1)
+    {
+        ohms_law();
+    }
+    else if (mode == 2)
+    {
+        power_loss();
+    }
+    else
+    {
+        std::cout << "The mode you selected is invalid, try again...";
+        main();
+    }
 
     return 0;
 }
