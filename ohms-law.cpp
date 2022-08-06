@@ -112,12 +112,55 @@ void resistance()
     }
 }
 
+void current_div()
+{
+    int mode, totalResist;
+    float itotal, input, denom, numer;
+    auto i = 1;
+    auto j = 0;
+    std::cout << "Enter the input Current (I): ";
+    std::cin >> input;
+    std::cout << "How many resistors are you dividing?: ";
+    std::cin >> totalResist;
+    float iArray[totalResist];
+    if (totalResist == 2)
+    {
+        for (i; i <= totalResist; i++)
+        {
+            std::cout << "\n\nEnter the value of the resistor: ";
+            std::cin >> iArray[i];
+        }
+        std::cout << "\nCurrent through " << iArray[1] << " Ohm resistor is: " << (input * iArray[2]) / (iArray[1] + iArray[2]) << " amps\n";
+        std::cout << "Current through " << iArray[2] << " Ohm resistor is: " << (input * iArray[1]) / (iArray[1] + iArray[2]) << " amps\n";
+    }
+    else
+    {
+        std::cout << "You entered an invalid number of resistors (please enter two resistor values.\n";
+        current_div();
+    }
+    // else (WIP logic for current divider with more than two resistors)
+    // {
+    //     for (i; i <= totalResist; i++)
+    //     {
+    //         std::cout << "Enter the value of the resistor: ";
+    //         std::cin >> iArray[i];
+    //     }
+    //     for (j; j <= totalResist; j++)
+    //     {
+    //         numer = (1 / iArray[j]);
+    //         denom += (1 / iArray[j]);
+    //         itotal = input * (numer / denom);
+    //         std::cout << "Current through " << iArray[j] << " Ohm resistor is: " << itotal << " amps\n";
+    //     }
+    // }
+}
+
 int main()
 {
     int mode;
     char ans;
     std::cout << "Hello, Welcome to the Circuit Calculator\n";
-    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n4. Find Total Resistance\n5. Quit\n: ";
+    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n4. Find Total Resistance\n5. Current Division\n6. Quit\n: ";
     std::cin >> mode;
     if (mode == 1)
     {
@@ -156,6 +199,18 @@ int main()
             return 0;
     }
     else if (mode == 5)
+    {
+        current_div();
+        std::cout << "Compute again? (y/n): ";
+        std::cin >> ans;
+        if (ans == 'y')
+        {
+            main();
+        }
+        else
+            return 0;
+    }
+    else if (mode == 6)
     {
         std::cout << "Goodbye!\n";
         return 0;
