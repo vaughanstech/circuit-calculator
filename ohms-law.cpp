@@ -155,12 +155,39 @@ void current_div()
     // }
 }
 
+void voltage_div()
+{
+    int totalResist;
+    float input;
+    auto i = 1;
+    std::cout << "Enter the input Voltage (V): ";
+    std::cin >> input;
+    std::cout << "How many resistors: ";
+    std::cin >> totalResist;
+    float vArray[totalResist];
+    if (totalResist == 2)
+    {
+        for (i; i <= totalResist; i++)
+        {
+            std::cout << "\nEnter the value of the resistor: ";
+            std::cin >> vArray[i];
+        }
+        std::cout << "\nVoltage through " << vArray[1] << " Ohm resistor is: " << (input * vArray[1]) / (vArray[1] + vArray[2]) << "V\n";
+        std::cout << "\nVoltage through " << vArray[2] << " Ohm resistor is: " << (input * vArray[2]) / (vArray[1] + vArray[2]) << "V\n";
+    }
+    else
+    {
+        std::cout << "Please enter 2 resistors\n";
+        voltage_div();
+    }
+}
+
 int main()
 {
     int mode;
     char ans;
     std::cout << "Hello, Welcome to the Circuit Calculator\n";
-    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n4. Find Total Resistance\n5. Current Division\n6. Quit\n: ";
+    std::cout << "Please enter a mode\n1. Find Ohm's Law\n2. Find Power Loss\n4. Find Total Resistance\n5. Current Division\n6. Voltage Division\n7. Quit\n: ";
     std::cin >> mode;
     if (mode == 1)
     {
@@ -169,6 +196,7 @@ int main()
         std::cin >> ans;
         if (ans == 'y')
         {
+            printf("\n\n");
             main();
         }
         else
@@ -181,6 +209,7 @@ int main()
         std::cin >> ans;
         if (ans == 'y')
         {
+            printf("\n\n");
             main();
         }
         else
@@ -193,6 +222,7 @@ int main()
         std::cin >> ans;
         if (ans == 'y')
         {
+            printf("\n\n");
             main();
         }
         else
@@ -205,12 +235,26 @@ int main()
         std::cin >> ans;
         if (ans == 'y')
         {
+            printf("\n\n");
             main();
         }
         else
             return 0;
     }
     else if (mode == 6)
+    {
+        voltage_div();
+        std::cout << "Compute again? (y/n): ";
+        std::cin >> ans;
+        if (ans == 'y')
+        {
+            printf("\n\n");
+            main();
+        }
+        else
+            return 0;
+    }
+    else if (mode == 7)
     {
         std::cout << "Goodbye!\n";
         return 0;
