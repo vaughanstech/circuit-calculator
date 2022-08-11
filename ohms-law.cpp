@@ -17,7 +17,7 @@ int ohms_law()
         std::cout << "Enter the Resistance (R): ";
         std::cin >> r;
         std::cout << "Voltage: " << i * r << "V\n";
-        std::cout << "\nCalculate Ohm's Law again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Ohm's Law again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -36,7 +36,7 @@ int ohms_law()
         std::cout << "Enter the Resistance (R): ";
         std::cin >> r;
         std::cout << "Current: " << v / r << " Amps\n";
-        std::cout << "\nCalculate Ohm's Law again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Ohm's Law again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -55,7 +55,7 @@ int ohms_law()
         std::cout << "Enter the Current (I): ";
         std::cin >> i;
         std::cout << "Resistance: " << v / i << " Ohms\n";
-        std::cout << "\nCalculate Ohm's Law again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Ohm's Law again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -89,7 +89,7 @@ int power_loss()
         std::cout << "Enter the Voltage (V): ";
         std::cin >> v;
         std::cout << "Power: " << i * v << "W\n";
-        std::cout << "\nCalculate Power Loss again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Power Loss again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -108,7 +108,7 @@ int power_loss()
         std::cout << "Enter the Resistance (R): ";
         std::cin >> r;
         std::cout << "Power: " << pow(i, 2) * r << "W\n";
-        std::cout << "\nCalculate Power Loss again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Power Loss again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -127,7 +127,7 @@ int power_loss()
         std::cout << "Enter the Resistance (R): ";
         std::cin >> r;
         std::cout << "Power: " << pow(v, 2) * r << "W\n";
-        std::cout << "\nCalculate Power Loss again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Power Loss again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -164,7 +164,7 @@ int resistance()
             std::cin >> rArray[i];
         }
         std::cout << "Total resistance: " << (rArray[1] * rArray[2]) / (rArray[1] + rArray[2]) << " Ohms\n";
-        std::cout << "\nCalculate resistance again? (y/n): " << std::endl;
+        std::cout << "\nCalculate resistance again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -184,7 +184,7 @@ int resistance()
             Rtotal += (1 / rArray[i]);
         }
         std::cout << "Total resistance: " << 1 / Rtotal << " Ohms\n";
-        std::cout << "\nCalculate resistance again? (y/n): " << std::endl;
+        std::cout << "\nCalculate resistance again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -219,7 +219,7 @@ int current_div()
         }
         std::cout << "\nCurrent through " << iArray[1] << " Ohm resistor is: " << (input * iArray[2]) / (iArray[1] + iArray[2]) << " amps\n";
         std::cout << "Current through " << iArray[2] << " Ohm resistor is: " << (input * iArray[1]) / (iArray[1] + iArray[2]) << " amps\n";
-        std::cout << "\nCalculate Current Division again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Current Division again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -273,7 +273,7 @@ int voltage_div()
         }
         std::cout << "\nVoltage through " << vArray[1] << " Ohm resistor is: " << (input * vArray[1]) / (vArray[1] + vArray[2]) << "V\n";
         std::cout << "\nVoltage through " << vArray[2] << " Ohm resistor is: " << (input * vArray[2]) / (vArray[1] + vArray[2]) << "V\n";
-        std::cout << "\nCalculate Voltage Division again? (y/n): " << std::endl;
+        std::cout << "\nCalculate Voltage Division again? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -303,7 +303,7 @@ int main()
     if (mode == 1)
     {
         ohms_law();
-        std::cout << "Compute again? (y/n): ";
+        std::cout << "Back to main menu? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -316,7 +316,7 @@ int main()
     else if (mode == 2)
     {
         power_loss();
-        std::cout << "Compute again? (y/n): ";
+        std::cout << "Back to main menu? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -329,7 +329,7 @@ int main()
     else if (mode == 4)
     {
         resistance();
-        std::cout << "Compute again? (y/n): ";
+        std::cout << "Back to main menu? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -342,7 +342,7 @@ int main()
     else if (mode == 5)
     {
         current_div();
-        std::cout << "Compute again? (y/n): ";
+        std::cout << "Back to main menu? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
@@ -355,7 +355,7 @@ int main()
     else if (mode == 6)
     {
         voltage_div();
-        std::cout << "Compute again? (y/n): ";
+        std::cout << "back to main menu? (y/n): ";
         std::cin >> ans;
         if (ans == 'y')
         {
