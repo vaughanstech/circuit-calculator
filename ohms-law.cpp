@@ -2,7 +2,7 @@
 #include <math.h>
 #include <stdio.h>
 
-void ohms_law()
+int ohms_law()
 {
     int mode;
     char ans;
@@ -25,7 +25,7 @@ void ohms_law()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else if (mode == 2)
@@ -44,7 +44,7 @@ void ohms_law()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else if (mode == 3)
@@ -63,7 +63,7 @@ void ohms_law()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else
@@ -71,9 +71,10 @@ void ohms_law()
         std::cout << "\nYou selected an invalid mode, try again...\n";
         ohms_law();
     }
+    return 0;
 }
 
-void power_loss()
+int power_loss()
 {
     int mode;
     char ans;
@@ -96,7 +97,7 @@ void power_loss()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else if (mode == 2)
@@ -115,7 +116,7 @@ void power_loss()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else if (mode == 3)
@@ -134,7 +135,7 @@ void power_loss()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else
@@ -142,9 +143,10 @@ void power_loss()
         std::cout << "\nYou selected an invalid mode, try again...";
         power_loss();
     }
+    return 0;
 }
 
-void resistance()
+int resistance()
 {
     int mode, totalResist;
     char ans;
@@ -170,7 +172,7 @@ void resistance()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else
@@ -190,12 +192,13 @@ void resistance()
         }
         else
         {
-            main();
+            return 0;
         }
     }
+    return 0;
 }
 
-void current_div()
+int current_div()
 {
     int mode, totalResist;
     float itotal, input, denom, numer;
@@ -224,7 +227,7 @@ void current_div()
         }
         else
         {
-            main();
+            return 0;
         }
     }
     else
@@ -247,9 +250,10 @@ void current_div()
     //         std::cout << "Current through " << iArray[j] << " Ohm resistor is: " << itotal << " amps\n";
     //     }
     // }
+    return 0;
 }
 
-void voltage_div()
+int voltage_div()
 {
     int totalResist;
     float input;
@@ -277,7 +281,8 @@ void voltage_div()
         }
         else
         {
-            main();
+            return 0;
+            ;
         }
     }
     else
@@ -285,6 +290,7 @@ void voltage_div()
         std::cout << "Please enter 2 resistors\n";
         voltage_div();
     }
+    return 0;
 }
 
 int main()
